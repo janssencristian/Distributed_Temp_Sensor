@@ -17,12 +17,10 @@ async def receive_temperature(data: dict):
 
     temperature = data["temperature"]
 
-    # Regra de decisão local
     if temperature > 80:
         alert_count += 1
         print(f"ALERTA LOCAL! Temperatura crítica: {temperature}")
 
-    # Envia apenas média a cada 10 mensagens
     if total_messages % 10 == 0:
         try:
             requests.post(f"{CLOUD_URL}/aggregate", json={
