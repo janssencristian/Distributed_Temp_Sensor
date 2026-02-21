@@ -1,4 +1,4 @@
-# 🌡 Edge Computing IoT – Monitoramento de Temperatura com Kubernetes Distribuído
+# Sensor de Temperatura Distribuído Utilizando Kubernetes e Edge Compunting
 
 Este projeto demonstra na prática conceitos de **Edge Computing aplicados a IoT**, utilizando um **cluster Kubernetes geograficamente distribuído**.
 
