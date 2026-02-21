@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloud
+  template:
+    metadata:
+      labels:
+        app: cloud
+    spec:
+      nodeSelector:
+        region: cloud
+      containers:
+        - name: cloud
+          image: janssencristian/cloud:1.0
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-service
+spec:
+  selector:
+    app: cloud
+  ports:
+    - port: 8000
+      targetPort: 8000
